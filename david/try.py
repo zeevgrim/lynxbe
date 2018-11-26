@@ -25,10 +25,11 @@ for user in userNames:
         date = dt.datetime.strptime(d,'%d/%m/%Y').date()
         x.append(date)
 
-    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m/%d/%Y'))
+    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%d/%m/%Y'))
     plt.gca().xaxis.set_major_locator(mdates.DayLocator())
     plt.plot(x, y)
     plt.gcf().autofmt_xdate()
     plt.ylabel('followers')
     plt.savefig(user + '.png')
+    plt.clf()
     pprint('Saved file for: ' + user)

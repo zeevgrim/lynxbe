@@ -1,9 +1,42 @@
-{"grim_valerie":
-    [{"date":"2018-11-23 21:32:06",
-        "followers":"1441",
-        "following":"1452",
-        "avgEngagement":"16.37"},
-    {"date":"2018-11-25 21:32:06",
-        "followers":"1500",
-        "following":"1452",
-        "avgEngagement":"16.37"}],"zeev_grim":[{"date":"2018-11-25 20:20:07","followers":"1146","following":"1347","avgEngagement":"9.17"},{"date":"2018-11-30 20:20:07","followers":"1146","following":"1347","avgEngagement":"9.17"}]}
+{
+    "grim_valerie": [
+        {
+            "date": "2018-11-23 21:32:06",
+            "followers": "1200",
+            "following": "1452",
+            "avgEngagement": "16.37"
+        },
+        {
+            "date": "2018-11-25 21:32:06",
+            "followers": "1500",
+            "following": "1452",
+            "avgEngagement": "16.37"
+        },
+        {
+            "date": "2018-11-26 20:08:08",
+            "followers": "2000",
+            "following": "1455",
+            "avgEngagement": "15.90"
+        }
+    ],
+    "zeev_grim": [
+        {
+            "date": "2018-11-20 20:20:07",
+            "followers": "1146",
+            "following": "1347",
+            "avgEngagement": "9.17"
+        },
+        {
+            "date": "2018-11-23 20:20:07",
+            "followers": "1146",
+            "following": "1347",
+            "avgEngagement": "9.17"
+        },
+        {
+            "date": "2018-11-26 18:56:05",
+            "followers": "1178",
+            "following": "1289",
+            "avgEngagement": "8.97"
+        }
+    ]
+}
