@@ -1,7 +1,6 @@
-const https = require('https')
+const https = require('https');
 const fs = require('fs');
 
-const userData = [];
 const usernamesList = ['zeev_grim', 'grim_valerie'];
 const dataFileName = 'data.json';
 const apiKey = '4672ef20249ef72fd7de49d45fc11e6f';
