@@ -17,23 +17,28 @@ userNames = ['zeev_grim', 'grim_valerie']
 def createUsersHistoryCsv(userName, userData):
     with open(userName + '/' + userName + '_statistics.csv', mode='w') as csvFile:
         csvWriter = csv.writer(csvFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        csvWriter.writerow(['Date', 'Followers', 'Following', 'Engagement'])
+        csvWriter.writerow(['Date', 'Followers', '', 'Following', '', 'Engagement', ''])
+        reversedData = list(reversed(userData));
 
-        for idx, curr in enumerate(userData):
-            if idx == 0:
-                csvWriter.writerow([curr['date'], curr['followers'],'-', curr['following'], '-', curr['avgEngagement']])
+        for idx, curr in enumerate(reversedData):
+            if idx == len(userData) - 1:
+                csvWriter.writerow([curr['date'], curr['followers'],'-', curr['following'], '-', curr['avgEngagement'], '-'])
             else:
-                prev = userData[idx - 1]
+                prev = reversedData[idx + 1]
                 deltaFollowers = int(curr['followers']) - int(prev['followers'])
                 deltaFollowings = int(curr['following']) - int(prev['following'])
-
+                deltaEngagement = float(curr['avgEngagement']) - float(prev['avgEngagement'])
+        
                 if deltaFollowers > 0: 
                     deltaFollowers = '+' + str(deltaFollowers)
                 if deltaFollowings > 0: 
                     deltaFollowings = '+' + str(deltaFollowings)
+                if deltaEngagement > 0: 
+                    deltaEngagement = '+' + str(deltaEngagement)
 
-                csvWriter.writerow([curr['date'], curr['followers'], deltaFollowers, curr['following'], deltaFollowings, curr['avgEngagement']])
+                deltaEngagement = str(deltaEngagement) + '%'
 
+                csvWriter.writerow([curr['date'], curr['followers'], deltaFollowers, curr['following'], deltaFollowings, curr['avgEngagement'], deltaEngagement])
 
         pprint('Saved the statistics csv file for: ' + userName)
 
