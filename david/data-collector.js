@@ -1,13 +1,13 @@
 const https = require('https');
 const fs = require('fs');
 
-const usernamesList = ['zeev_grim', 'grim_valerie'];
+const usernamesList = ['zeev_grim', 'alonsternphoto', 'alonamed16', 'i_am_rousseau', 'stave27'];
 const dataFileName = 'data.json';
 const apiKey = '4672ef20249ef72fd7de49d45fc11e6f';
 let url = "";
 
 usernamesList.forEach(userName => {
-  url = `https://viralinsight.co/api.php?api_key=${apiKey}&username=${userName}`
+  url = `https://viralinsight.io/api.php?api_key=${apiKey}&username=${userName}`
 
   https.get(url, (res) => {
     res.setEncoding('utf8');

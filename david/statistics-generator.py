@@ -12,7 +12,7 @@ import matplotlib.dates as mdates
 import pandas as pd
 
 # list of instagram users
-userNames = ['zeev_grim', 'grim_valerie']
+userNames = ['zeev_grim', 'alonsternphoto', 'alonamed16', 'i_am_rousseau', 'stave27']
 
 def createUsersHistoryCsv(userName, userData):
     with open(userName + '/' + userName + '_statistics.csv', mode='w') as csvFile:
@@ -27,7 +27,7 @@ def createUsersHistoryCsv(userName, userData):
                 prev = reversedData[idx + 1]
                 deltaFollowers = int(curr['followers']) - int(prev['followers'])
                 deltaFollowings = int(curr['following']) - int(prev['following'])
-                deltaEngagement = float(curr['avgEngagement']) - float(prev['avgEngagement'])
+                deltaEngagement = round(float(curr['avgEngagement']) - float(prev['avgEngagement']))
         
                 if deltaFollowers > 0: 
                     deltaFollowers = '+' + str(deltaFollowers)
