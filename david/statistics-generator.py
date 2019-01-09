@@ -43,6 +43,7 @@ def createUsersHistoryCsv(userName, userData):
         pprint('Saved the statistics csv file for: ' + userName)
 
 def createUsersPredictionsCsv(userName, userData):
+    currFollowers = userData[len(userData)]['followers'] 
     deltasSum = 0
     for idx, curr in enumerate(userData):
         if idx != 0:
@@ -55,14 +56,14 @@ def createUsersPredictionsCsv(userName, userData):
         csvWriter = csv.writer(csvFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         csvWriter.writerow(['Time', 'Followers'])
         
-        csvWriter.writerow(['30 days', 30 * avg])
-        csvWriter.writerow(['60 days', 60 * avg])
-        csvWriter.writerow(['3 month', 90 * avg])
-        csvWriter.writerow(['6 month', 183 * avg])
-        csvWriter.writerow(['9 month', 276 * avg])
-        csvWriter.writerow(['1 year', 365 * avg])
-        csvWriter.writerow(['1 year and a half', 548 * avg])
-        csvWriter.writerow(['2 years', 730 * avg])
+        csvWriter.writerow(['30 days',currFollowers + 30 * avg])
+        csvWriter.writerow(['60 days',currFollowers + 60 * avg])
+        csvWriter.writerow(['3 month',currFollowers + 90 * avg])
+        csvWriter.writerow(['6 month',currFollowers + 183 * avg])
+        csvWriter.writerow(['9 month',currFollowers + 276 * avg])
+        csvWriter.writerow(['1 year',currFollowers + 365 * avg])
+        csvWriter.writerow(['1 year and a half',currFollowers + 548 * avg])
+        csvWriter.writerow(['2 years',currFollowers + 730 * avg])
             
         pprint('Saved the predictions csv file for: ' + userName)
 
