@@ -43,7 +43,7 @@ def createUsersHistoryCsv(userName, userData):
         pprint('Saved the statistics csv file for: ' + userName)
 
 def createUsersPredictionsCsv(userName, userData):
-    currFollowers = userData[len(userData)]['followers'] 
+    currFollowers = userData[len(userData) - 1]['followers'] 
     deltasSum = 0
     for idx, curr in enumerate(userData):
         if idx != 0:
